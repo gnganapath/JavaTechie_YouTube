@@ -32,7 +32,7 @@ public class OrderService {
 
 		//rest call for transaction -> payment spb
 		//restTemplate.post -> payment api is POSTMapping at payment service  ( 1.url of the payment service, 2. customised Payment class in order -> common-> , 3. other API expected rest java class)
-		Payment paymentResponse =  restTemplate.postForObject("http://localhost:9092/payment/doPayment", payment, Payment.class);
+		Payment paymentResponse =  restTemplate.postForObject("http://PAYMENT-SERVICE/payment/doPayment", payment, Payment.class);
 
 		response = paymentResponse.getPaymentStatus().equals("success")?"Payment processing successful  order placed" : "Order failed to payment processing";
 		orderRepository.save(order);
