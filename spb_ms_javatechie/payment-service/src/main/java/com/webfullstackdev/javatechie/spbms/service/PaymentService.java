@@ -16,7 +16,7 @@ public class PaymentService {
 	PaymentRepository paymentRepository;
 	
 	public Payment savePaymentService(Payment payment) {
-		payment.setPaymentStatus(paymentProcessing());  // call this payment status - complete payment details
+		payment.setPaymentStatus(paymentProcessing());  // call this payment status - complete payment detai
 		payment.setTransactionId(UUID.randomUUID().toString());
 		return paymentRepository.save(payment);
 	}

@@ -1,5 +1,8 @@
 package com.webfullstackdev.javatechie.spbms.controller;
 
+import com.webfullstackdev.javatechie.spbms.common.Payment;
+import com.webfullstackdev.javatechie.spbms.common.TransactionRequest;
+import com.webfullstackdev.javatechie.spbms.common.TransactionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +20,9 @@ public class OrderController {
 	OrderService orderService;
 	
 	@PostMapping("/bookOrder")
-	public Order bookOrder( @RequestBody Order order) {
-		return orderService.saveOrder(order);
+	public TransactionResponse bookOrder(@RequestBody TransactionRequest request) {
+	    //do the rest call for the payment api service from order service
+		return orderService.saveOrder(request);
 	}
 	
 	
