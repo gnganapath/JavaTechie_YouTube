@@ -1,0 +1,8 @@
+server:
+  port: 8761
+
+# specifying this is not eureka client. So, Automatically takes it;s eureka server
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
