@@ -1,10 +1,7 @@
 package com.webfullstackdev.javatechie.spbms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.webfullstackdev.javatechie.spbms.Entity.Payment;
 import com.webfullstackdev.javatechie.spbms.service.PaymentService;
@@ -21,4 +18,10 @@ public class PaymentController {
 		return paymentService.savePaymentService(paymentDetails);
 	}
 
+
+	// to verify the API gate micro service adding new payment service api
+    @GetMapping("/{orderId}")
+    public Payment findOrder(@PathVariable int orderId){
+	    return paymentService.findOrderHistoryById(orderId);
+    }
 }

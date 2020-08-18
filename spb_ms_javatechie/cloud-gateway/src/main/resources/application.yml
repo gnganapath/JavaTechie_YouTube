@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: lb://ORDER_SERVICE
+          predicates:
+            - Path=/order/**
+        - id: payment-service
+          uri: lb://PAYMENT_SERVICE
+          predicates:
+             - Path=/payment/**
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
+
+server:
+  port: 8989

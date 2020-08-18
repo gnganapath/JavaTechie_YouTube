@@ -26,4 +26,8 @@ public class PaymentService {
 		return new Random().nextBoolean()? "Success" : "False";
 
 	}
+
+	public Payment findOrderHistoryById( int orderId){
+		return paymentRepository.findByOrderId(orderId);
+	}
 }
