@@ -24,6 +24,23 @@ public class Payment {
 	private int paymentId;
 	private String paymentStatus;
 	private String transactionId;
-	
-	
+	private int orderId;
+	private int amount;
+
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+
+	public String getPaymentStatus() {
+		return paymentStatus;
+	}
 }

@@ -14,5 +14,6 @@ public class OrderService {
 	
 	public Order saveOrder( Order order) {
 		return orderRepository.save(order);
+		// make an additional API call to the payment api details related to this order
 	}
 }
